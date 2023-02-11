@@ -1,7 +1,8 @@
 # 💎 Radio Harmony 💎
 
-<h2> Public Server : <a href="https://discord.gg/ir">𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬<a/><h2/>
-<h2> Develope & Config Server : <a href="https://discord.gg/dvc">Celestial™<a/><h2/>
+<h2> Public Server : <a href="https://discord.gg/ir">𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬<a/>
+<br/>
+Develope & Config Server : <a href="https://discord.gg/dvc">Celestial™<a/><h2/>
 
 #
 
