@@ -24,7 +24,7 @@ Token : Bot token
 GuildId : The Server ID that voice channel is there
 ```
 ```
-ResetChannelId :  Voice channel ID of the where the bot can be restarted. (preferably hidden.)
+ResetChannelId :  Voice channel ID of the where the bot can be restarted (preferably hidden)
 ```
 ```
 LogId : The Text channel ID to log the bot actions
