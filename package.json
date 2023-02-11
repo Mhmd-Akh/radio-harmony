@@ -1,6 +1,6 @@
 {
   "name": "radio-harmony",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Radio for discord",
   "main": "./src/index.js",
   "scripts": {
@@ -12,7 +12,9 @@
   },
   "keywords": [
     "radio",
-    "discord"
+    "discord",
+    "discord bot",
+    "music"
   ],
   "author": "✥ MhmD ιnvιѕ#1854",
   "license": "MIT",
