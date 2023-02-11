@@ -1,5 +1,10 @@
 # 💎 Harmony Radio 💎
 
+Public Server : [𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬](https://discord.gg/ir) 
+<br/>
+Develope & Config Server : [Celestial™](https://discord.gg/dvc) 
+<br/>
+
 # 🤔 Object Info : 
 
 ```
@@ -42,4 +47,6 @@ radio({
 
 # 🪬 Created By 
 
+Profile : [✥ MhmD ιnvιѕ#1854](https://discordapp.com/users/750337293927055452) 
+<br/>
 <img src="https://discord.c99.nl/widget/theme-2/750337293927055452.png">
