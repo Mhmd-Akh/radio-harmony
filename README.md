@@ -1,8 +1,8 @@
 # 💎 Harmony Radio 💎
 
-<h3>Public Server : <h3/><a herf="https://discord.gg/ir">𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬<a/>
+<span>Public Server : <span/><a herf="https://discord.gg/ir">𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬<a/>
 <br/>
-<h3>Develope & Config Server : <h3/><a herf="https://discord.gg/dvc">Celestial™<a/>
+<span>Develope & Config Server : <span/><a herf="https://discord.gg/dvc">Celestial™<a/>
 <br/>
 
 # 🤔 Object Info : 
