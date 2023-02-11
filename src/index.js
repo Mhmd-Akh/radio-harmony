@@ -49,7 +49,7 @@ async function radio({ IdChannel, Links, Youtube, Token, GuildId, ResetChannelId
                     channelId: channel.id,
                     guildId: channel.guild.id,
                     adapterCreator: channel.guild.voiceAdapterCreator
-                }).catch(e => { return console.error(e); })
+                })
                 if (Youtube === true) {
                     const Radio = createAudioResource(ytdl(Links, {
                         quality: "highestaudio"
