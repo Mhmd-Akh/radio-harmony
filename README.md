@@ -32,7 +32,6 @@ LogId : The Text channel ID to log the bot actions
 ```
 
 ## ✨ Example for use :
-</br>
 
 ```js
 const radio = require("harmony-radio")
