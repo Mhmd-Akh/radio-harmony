@@ -51,6 +51,7 @@ radio({
 
 # 🪬 Created By 
 
-<h2 align= "center" > Profile : <a href="https://discordapp.com/users/750337293927055452">Discord<a/> / <a href ="https://github.com/Mhmd-Akh/">Github<a/><h2/>
+<h2 align= "center" > Profile : <a href="https://discordapp.com/users/750337293927055452">Discord<a/> / <a href ="https://github.com/Mhmd-Akh/">Github<a/>
+<br/>
+<img src="https://discord.c99.nl/widget/theme-2/750337293927055452.png"><h2/>
 
-<img align= "center" src="https://discord.c99.nl/widget/theme-2/750337293927055452.png">
