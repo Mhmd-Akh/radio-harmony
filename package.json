@@ -1,6 +1,6 @@
 {
   "name": "radio-harmony",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Radio for discord",
   "main": "./src/index.js",
   "scripts": {
