@@ -1,7 +1,7 @@
-# 💎 Harmony Radio 💎
+# 💎 Radio Harmony 💎
 
 <h2> Public Server : <a href="https://discord.gg/ir">𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬<a/><h2/>
-<h3> Develope & Config Server : <a href="https://discord.gg/dvc">Celestial™<a/><h3/>
+<h2> Develope & Config Server : <a href="https://discord.gg/dvc">Celestial™<a/><h2/>
 
 #
 
@@ -50,6 +50,6 @@ radio({
 
 # 🪬 Created By 
 
-<span>Profile : <span/> <a href="https://discordapp.com/users/750337293927055452">✥ MhmD ιnvιѕ#1854<a/>
-<br/>
+<h2 align= "center" > Profile : <a href="https://discordapp.com/users/750337293927055452">Discord<a/> / <a href ="https://github.com/Mhmd-Akh/">Github<a/><h2/>
+
 <img src="https://discord.c99.nl/widget/theme-2/750337293927055452.png">
