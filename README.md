@@ -1,11 +1,12 @@
 # 💎 Harmony Radio 💎
 
-<span>Public Server : <span/> <a href="https://discord.gg/ir">𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬<a/>
-<br/>
-<span>Develope & Config Server : <span/> <a href="https://discord.gg/dvc">Celestial™<a/>
-<br/>
+<h2> Public Server : <a href="https://discord.gg/ir">𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬<a/><h2/>
+<h3> Develope & Config Server : <a href="https://discord.gg/dvc">Celestial™<a/><h3/>
 
-# 🤔 Object Info : 
+#
+
+## 🤔 Object info : 
+</br>
 
 ```
 IdChannel : Voice channel ID of the channel you want the radio to play on
@@ -29,24 +30,26 @@ ResetChannelId :  Voice channel ID of the where the bot can be restarted. (prefe
 LogId : The Text channel ID to log the bot actions
 ```
 
-# ✨ Example for use :
+## ✨ Example for use :
+</br>
 
 ```js
 const radio = require("harmony-radio")
 
 radio({
-    IdChannel: "1013186636718276628",
-    Links: "https://www.youtube.com/watch?v=93lXh1yBjpg",
+    IdChannel: "Voice_Id(play)",
+    Links: "Link(music_or_radio)",
     Youtube: true,
-    Token: "",
-    GuildId: "578558255392096256",
-    ResetChannelId: "1044631776640901190",
-    LogId: "1013185293408538805"
+    Token: "Bot_Token",
+    GuildId: "Server_Id",
+    ResetChannelId: "Voice_Id(reset)",
+    LogId: "Channel_Id(log)"
 })
 ```
+<br/>
 
 # 🪬 Created By 
 
-Profile : [✥ MhmD ιnvιѕ#1854](https://discordapp.com/users/750337293927055452) 
+<span>Profile : <span/> <a href="https://discordapp.com/users/750337293927055452">✥ MhmD ιnvιѕ#1854<a/>
 <br/>
 <img src="https://discord.c99.nl/widget/theme-2/750337293927055452.png">
