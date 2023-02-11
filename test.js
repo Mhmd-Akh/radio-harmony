@@ -1,4 +1,4 @@
-const radio = require("harmonyradio")
+const radio = require("radio-harmony")
 
 radio({
     IdChannel: "1013186636718276628",
