@@ -39,7 +39,7 @@ const radio = require("radio-harmony")
 radio({
     IdChannel: "Voice_Id(play)",
     Links: "Link(music_or_radio)",
-    Youtube: true,
+    Youtube: True_Or_False,
     Token: "Bot_Token",
     GuildId: "Server_Id",
     ResetChannelId: "Voice_Id(reset)",
