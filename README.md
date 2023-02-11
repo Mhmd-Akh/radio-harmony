@@ -1,18 +1,32 @@
-# Harmony Radio
+# 💎 Harmony Radio 💎
 
-# Object Info : 
-
-`IdChannel : Voice channel ID of the channel you want the radio to play on`
-`Links : Radio link or song you want`
-`Youtube : If your radio or music link was YouTube (true) else (false)`
-`Token : Bot token`
-`GuildId : The Server ID that voice channel is there`
-`ResetChannelId :  Voice channel ID of the where the bot can be restarted. (preferably hidden.)`
-`LogId : The Text channel ID to log the bot actions `
-
-# example for use :
+# 🤔 Object Info : 
 
 ```
+IdChannel : Voice channel ID of the channel you want the radio to play on
+```
+```
+Links : Radio link or song you want
+```
+```
+Youtube : If your radio or music link was YouTube (true) else (false)
+```
+```
+Token : Bot token
+```
+```
+GuildId : The Server ID that voice channel is there
+```
+```
+ResetChannelId :  Voice channel ID of the where the bot can be restarted. (preferably hidden.)
+```
+```
+LogId : The Text channel ID to log the bot actions
+```
+
+# ✨ Example for use :
+
+```js
 const radio = require("harmony-radio")
 
 radio({
@@ -26,6 +40,6 @@ radio({
 })
 ```
 
-# Created By 
+# 🪬 Created By 
 
 <img src="https://discord.c99.nl/widget/theme-2/750337293927055452.png">
