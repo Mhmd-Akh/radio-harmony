@@ -65,9 +65,7 @@ See the <a href="https://github.com/Mhmd-Akh/radio-harmony/blob/main/test.js">te
 
 > v1.0.4 : `Added Spotify & Souncloud. In addition update playing status to song name or title`
 
-> v1.0.3 : `Debug all`
-
-> v1.0.1 : `Debug channel log`
+> v1.0.1 & 1.0.2 & 1.0.3 : `Debug all`
 
 
 
