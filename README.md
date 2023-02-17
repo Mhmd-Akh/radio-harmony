@@ -5,7 +5,9 @@
 Develope & Config Server : <a href="https://discord.gg/dvc">Celestial™<a/>
 <h2/>
 
-## 🤔 Object info : 
+#
+
+# 🤔 Object info : 
 </br>
 
 ```
@@ -13,9 +15,6 @@ IdChannel : Voice channel ID of the channel you want the radio to play on
 ```
 ```
 Links : Radio link or song you want
-```
-```
-Youtube : If your radio or music link was YouTube (true) else (false)
 ```
 ```
 Token : Bot token
@@ -30,7 +29,7 @@ ResetChannelId :  Voice channel ID of the where the bot can be restarted (prefer
 LogId : The Text channel ID to log the bot actions
 ```
 
-## ✨ Example for use :
+# ✨ Example for use :
 
 ```js
 const radio = require("radio-harmony")
@@ -38,7 +37,19 @@ const radio = require("radio-harmony")
 radio({
     IdChannel: "Voice_Id(play)",
     Links: "Link(music_or_radio)",
-    Youtube: True_Or_False,
+    Token: "Bot_Token",
+    GuildId: "Server_Id",
+    ResetChannelId: "Voice_Id(reset)",
+    LogId: "Channel_Id(log)"
+})
+
+// ===================================================== //
+
+const radio = require("radio-harmony")
+
+radio({
+    IdChannel: "Voice_Id(play)",
+    Links: [ "Spotify", "Soundcloud", "Youtube", "Mp3" ],
     Token: "Bot_Token",
     GuildId: "Server_Id",
     ResetChannelId: "Voice_Id(reset)",
@@ -46,9 +57,23 @@ radio({
 })
 ```
 
+See the <a href="https://github.com/Mhmd-Akh/radio-harmony/blob/main/test.js">test.js<a/> file for better guidance
+
+
+# 🆙 Update
+
+> v1.0.4 : `Added Spotify & Souncloud. In addition update playing status to song name or title`
+</br>
+</br>
+> v1.0.3 : `Debug all`
+</br>
+</br>
+> v1.0.1 : `Debug channel log`
+
+
+
 # 🪬 Created By 
 
 <h2 align= "center" > Profile : <a href="https://discordapp.com/users/750337293927055452">Discord<a/> / <a href ="https://github.com/Mhmd-Akh/">Github<a/>
-<br/>
+</br>
 <img src="https://discord.c99.nl/widget/theme-2/750337293927055452.png"><h2/>
-
