@@ -1,25 +1,23 @@
-async function radio({ IdChannel, Links, Youtube, Token, GuildId, ResetChannelId, LogId }) {
-    const {
-        Client,
-        Intents,
-        MessageEmbed,
-        MessageButton,
-        MessageActionRow
-    } = require("discord.js")
-    const ytdl = require("ytdl-core")
-    const {
-        joinVoiceChannel,
-        createAudioPlayer,
-        createAudioResource
-    } = require("@discordjs/voice")
-    const client = new Client({
-        intents: [
-            Intents.FLAGS.GUILDS,
-            Intents.FLAGS.GUILD_VOICE_STATES
-        ]
-    })
+require('dotenv').config()
 
+const { createAudioPlayer, createAudioResource, joinVoiceChannel, NoSubscriberBehavior } = require('@discordjs/voice')
+const { Client, Intents, MessageEmbed, MessageButton, MessageActionRow } = require("discord.js")
+const client = new Client({
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES
+    ]
+})
+
+const play = require('play-dl')
+const ytdl = require("ytdl-core")
+const scdl = require("soundcloud-downloader").default;
+const dl = require("@distube/ytdl")
+const Sr = require("youtube-sr").default
+
+async function radio({ IdChannel, Links, Token, GuildId, ResetChannelId, LogId }) {
     client.login(Token)
+
+    let Data;
+
     const channels = [
         ResetChannelId,
         IdChannel
@@ -42,40 +40,152 @@ async function radio({ IdChannel, Links, Youtube, Token, GuildId, ResetChannelId
             await new Promise(res => setTimeout(() => res(2), 500))
         }
 
-        function joinChannel(VoiceId) {
-            client.channels.fetch(VoiceId).then(channel => {
+        async function joinChannel(VoiceId) {
+            let musiclink = (await MusicLink(Links))
+            let Type = (await LinkValid(musiclink))
+
+            client.channels.fetch(VoiceId).then(async channel => {
 
                 const VoiceConnection = joinVoiceChannel({
                     channelId: channel.id,
                     guildId: channel.guild.id,
                     adapterCreator: channel.guild.voiceAdapterCreator
                 })
-                if (Youtube === true) {
-                    const Radio = createAudioResource(ytdl(Links, {
+
+                if (Type === "Youtube") {
+                    let title = (await dl.getInfo(musiclink).videoDetails.title)
+                    Data = "Playing 🎵 " + title
+
+                    const Radio = createAudioResource(ytdl(musiclink, {
                         quality: "highestaudio"
                     }), {
                         inlineVolume: true
                     });
-                    Player(Radio, VoiceConnection, VoiceId)
-                } else {
-                    const Radio = createAudioResource(Links, {
+
+                    Player(Radio, VoiceConnection, VoiceId, Type)
+                } else if (Type === "SoundCloud") {
+                    let Songs = (await scdl.getInfo(musiclink))
+                    Data = "Playing 🎵 " + Songs.title
+
+                    let searched = await Sr.search(Songs.title, {
+                        limit: 1
+                    })
+
+                    let stream = await play.stream(searched[0].url)
+                    let Radio = createAudioResource(stream.stream, {
+                        inlineVolume: true,
+                        inputType: stream.type
+                    })
+
+                    Player(Radio, VoiceConnection, VoiceId, Type)
+                } else if (Type === "Spotify") {
+                    let sp_data = await play.spotify(musiclink)
+
+                    let searched = await Sr.search(sp_data.name, {
+                        limit: 1
+                    })
+                    Data = "Playing 🎵 " + searched[0].title
+
+                    let stream = await play.stream(searched[0].url)
+                    let Radio = createAudioResource(stream.stream, {
+                        inlineVolume: true,
+                        inputType: stream.type
+                    })
+
+                    Player(Radio, VoiceConnection, VoiceId, Type)
+                } else if (Type === null) {
+                    Data = "Playing 🎵 Mp3 File"
+
+                    const Radio = createAudioResource(musiclink, {
                         inlineVolume: true
                     });
-                    Player(Radio, VoiceConnection, VoiceId)
+
+                    Player(Radio, VoiceConnection, VoiceId, Type)
+                } else if (Type === "YoutubePl") {
+                    joinChannel(VoiceId)
+                    return console.log("Please use track, don't use playlist. ❤️")
+                } else if (Type === "SoundCloudPl") {
+                    joinChannel(VoiceId)
+                    return console.log("Please use track, don't use playlist. ❤️")
+                } else if (Type === "SpotifyPl") {
+                    joinChannel(VoiceId)
+                    return console.log("Please use track, don't use playlist. ❤️")
                 }
+
             }).catch(console.error)
         }
-        async function Player(Radio, VoiceConnection, VoiceId) {
+        async function Player(Radio, VoiceConnection, VoiceId, Type) {
             try {
-                Radio.volume.setVolume(0.3);
-                const player = createAudioPlayer()
-                VoiceConnection.subscribe(player);
-                player.play(Radio)
+                let player;
+                if (Type === "Youtube") {
+                    Radio.volume.setVolume(0.3);
+                    player = createAudioPlayer({ behaviors: { noSubscriber: NoSubscriberBehavior.Play } })
+                    VoiceConnection.subscribe(player);
+                    player.play(Radio)
+                    console.log(Data);
+
+                    client.user.setPresence({
+                        activities: [{
+                            name: Data,
+                            type: "PLAYING"
+                        }],
+                        status: "online"
+                    })
+                } else
+                    if (Type === "SoundCloud") {
+                        Radio.volume.setVolume(0.3);
+                        player = createAudioPlayer({ behaviors: { noSubscriber: NoSubscriberBehavior.Play } })
+                        VoiceConnection.subscribe(player)
+                        player.play(Radio)
+                        console.log(Data);
+
+                        client.user.setPresence({
+                            activities: [{
+                                name: Data,
+                                type: "PLAYING"
+                            }],
+                            status: "online"
+                        })
+                    } else
+                        if (Type === "Spotify") {
+                            Radio.volume.setVolume(0.3);
+                            player = createAudioPlayer({ behaviors: { noSubscriber: NoSubscriberBehavior.Play } })
+                            VoiceConnection.subscribe(player)
+                            player.play(Radio)
+
+                            client.user.setPresence({
+                                activities: [{
+                                    name: Data,
+                                    type: "PLAYING"
+                                }],
+                                status: "online"
+                            })
+                        } else if (Type === null) {
+                            Radio.volume.setVolume(0.3);
+                            player = createAudioPlayer({ behaviors: { noSubscriber: NoSubscriberBehavior.Play } })
+                            VoiceConnection.subscribe(player);
+                            player.play(Radio)
+
+                            client.user.setPresence({
+                                activities: [{
+                                    name: Data,
+                                    type: "PLAYING"
+                                }],
+                                status: "online"
+                            })
+                        }
 
                 player.on("idle", () => {
                     try {
                         player.stop()
-                    } catch (e) { }
+                        client.user.setPresence({
+                            activities: [{
+                                name: "Radio for " + client.user.username,
+                                type: "PLAYING"
+                            }],
+                            status: "online"
+                        })
+                    } catch (e) { console.error(e) }
                     joinChannel(VoiceId)
                     const EMBED = new MessageEmbed()
                         .setTitle(`Radio ${client.user.username}`)
@@ -95,7 +205,39 @@ async function radio({ IdChannel, Links, Youtube, Token, GuildId, ResetChannelId
             }
         }
     })
-}
 
+    let valid = {
+        VideoID: /^[a-zA-Z0-9-_]{11}$/,
+        VideoURL: /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/,
+        SCTrack: /^https?:\/\/(soundcloud\.com|snd\.sc)\/([A-Za-z0-9_-]+)\/([A-Za-z0-9_-]+)\/?$/,
+        Spotify: /^(spotify:|https:\/\/[a-z]+\.spotify\.com\/)/,
+
+        PlaylistID: /(PL|UU|LL|RD)[a-zA-Z0-9-_]{16,41}/,
+        PlaylistURL: /https?:\/\/(www.)?youtube.com\/playlist\?list=((PL|UU|LL|RD)[a-zA-Z0-9-_]{16,41})/,
+        SCPlaylist: /^https?:\/\/(soundcloud\.com|snd\.sc)\/([A-Za-z0-9_-]+)\/sets\/([A-Za-z0-9_-]+)\/?$/,
+    };
+
+    async function MusicLink(Links) {
+        let LinksNum = Math.floor(Math.random() * Links.length);
+        let musicLink = Links[LinksNum]
+        return musicLink
+    }
+
+    function LinkValid(Value) {
+        let Type = null;
+
+        if (valid.VideoID.test(Value)) return Type = "Youtube";
+        if (valid.VideoURL.test(Value) && !Value.toLowerCase().includes("list")) return Type = "Youtube";
+        if (valid.SCTrack.test(Value)) return Type = "SoundCloud";
+        if (valid.Spotify.test(Value) && Value.toLowerCase().includes("track")) return Type = "Spotify";
+
+        if (valid.PlaylistID.test(Value) && !Value.startsWith("http")) return Type = "YoutubePl";
+        if (valid.PlaylistURL.test(Value)) return Type = "YoutubePl";
+        if (valid.SCPlaylist.test(Value)) return Type = "SoundCloudPl";
+        if (valid.Spotify.test(Value) && Value.toLowerCase().includes("playlist")) return Type = "SpotifyPl";
+
+        return Type
+    }
+}
 
 module.exports = radio
