@@ -12,6 +12,7 @@ const ytdl = require("ytdl-core")
 const scdl = require("soundcloud-downloader").default;
 const dl = require("@distube/ytdl")
 const Sr = require("youtube-sr").default
+const SPinfo = require('spotify-info');
 
 async function radio({ IdChannel, Links, Token, GuildId, ResetChannelId, LogId }) {
     client.login(Token)
@@ -53,7 +54,7 @@ async function radio({ IdChannel, Links, Token, GuildId, ResetChannelId, LogId }
                 })
 
                 if (Type === "Youtube") {
-                    let title = (await dl.getInfo(musiclink).videoDetails.title)
+                    let title = (await dl.getInfo(musiclink)).videoDetails.title
                     Data = "Playing 🎵 " + title
 
                     const Radio = createAudioResource(ytdl(musiclink, {
@@ -79,7 +80,7 @@ async function radio({ IdChannel, Links, Token, GuildId, ResetChannelId, LogId }
 
                     Player(Radio, VoiceConnection, VoiceId, Type)
                 } else if (Type === "Spotify") {
-                    let sp_data = await play.spotify(musiclink)
+                    let sp_data = await SPinfo.scrapeSong(musiclink)
 
                     let searched = await Sr.search(sp_data.name, {
                         limit: 1
