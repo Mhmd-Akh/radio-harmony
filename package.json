@@ -1,6 +1,6 @@
 {
   "name": "radio-harmony",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Radio for discord",
   "main": "./src/index.js",
   "scripts": {
@@ -32,7 +32,8 @@
     "soundcloud-downloader": "^1.0.0",
     "youtube-sr": "^4.3.4",
     "dotenv": "^16.0.3",
-    "@distube/ytdl": "^2.0.6"
+    "@distube/ytdl": "^2.0.6",
+    "spotify-info": "^1.0.3"
   },
   "homepage": "https://github.com/Mhmd-Akh/harmony-radio#readme"
 }
