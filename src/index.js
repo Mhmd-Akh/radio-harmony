@@ -14,7 +14,16 @@ const dl = require("@distube/ytdl")
 const Sr = require("youtube-sr").default
 const SPinfo = require('spotify-info');
 
-async function radio({ IdChannel, Links, Token, GuildId, ResetChannelId, LogId }) {
+async function radio(options = {}) {
+    const required = ['IdChannel', 'Links', 'Token', 'GuildId', 'ResetChannelId', 'LogId'];
+    const missing = required.filter(key => !options || !options[key]);
+    if (missing.length > 0) {
+        throw new Error(`radio-harmony: missing required option(s): ${missing.join(', ')}`);
+    }
+
+    let { IdChannel, Links, Token, GuildId, ResetChannelId, LogId } = options;
+    if (typeof Links === 'string') Links = [Links];
+
     client.login(Token)
 
     let Data;
@@ -103,13 +112,10 @@ async function radio({ IdChannel, Links, Token, GuildId, ResetChannelId, LogId }
 
                     Player(Radio, VoiceConnection, VoiceId, Type)
                 } else if (Type === "YoutubePl") {
-                    joinChannel(VoiceId)
                     return console.log("Please use track, don't use playlist. ❤️")
                 } else if (Type === "SoundCloudPl") {
-                    joinChannel(VoiceId)
                     return console.log("Please use track, don't use playlist. ❤️")
                 } else if (Type === "SpotifyPl") {
-                    joinChannel(VoiceId)
                     return console.log("Please use track, don't use playlist. ❤️")
                 }
 
@@ -219,6 +225,7 @@ async function radio({ IdChannel, Links, Token, GuildId, ResetChannelId, LogId }
     };
 
     async function MusicLink(Links) {
+        if (typeof Links === 'string') Links = [Links];
         let LinksNum = Math.floor(Math.random() * Links.length);
         let musicLink = Links[LinksNum]
         return musicLink
