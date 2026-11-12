@@ -1,11 +1,17 @@
 # 💎 Radio Harmony 💎
 
-<h2> Public Server : <a href="https://discord.gg/ir">𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬<a/>
+<h2> Public Server : <a href="https://discord.gg/ir">𝗛 𝗔 𝗥 𝗠 𝗢 𝗡 𝗬</a>
 <br/>
-Develope & Config Server : <a href="https://discord.gg/dvc">Celestial™<a/>
-<h2/>
+Develop & Config Server : <a href="https://discord.gg/dvc">Celestial™</a>
+</h2>
 
 #
+
+# 📦 Installation :
+
+```bash
+npm install radio-harmony
+```
 
 # 🤔 Object info : 
 </br>
@@ -57,7 +63,7 @@ radio({
 })
 ```
 
-See the <a href="https://github.com/Mhmd-Akh/radio-harmony/blob/main/test.js">test.js<a/> file for better guidance
+See the <a href="https://github.com/Mhmd-Akh/radio-harmony/blob/main/test.js">test.js</a> file for better guidance
 
 
 # 🆙 Update
@@ -65,7 +71,7 @@ See the <a href="https://github.com/Mhmd-Akh/radio-harmony/blob/main/test.js">te
 
 > v1.0.5 : `Fix Spotify & youtube`
 
-> v1.0.4 : `Added Spotify & Souncloud. In addition update playing status to song name or title`
+> v1.0.4 : `Added Spotify & SoundCloud. In addition update playing status to song name or title`
 
 > v1.0.1 & 1.0.2 & 1.0.3 : `Fix all bug`
 
@@ -73,6 +79,6 @@ See the <a href="https://github.com/Mhmd-Akh/radio-harmony/blob/main/test.js">te
 
 # 🪬 Created By 
 
-<h2 align= "center" > Profile : <a href="https://discordapp.com/users/750337293927055452">Discord<a/> / <a href ="https://github.com/Mhmd-Akh/">Github<a/>
+<h2 align= "center" > Profile : <a href="https://discordapp.com/users/750337293927055452">Discord</a> / <a href ="https://github.com/Mhmd-Akh/">Github</a>
 </br>
-<img src="https://discord.c99.nl/widget/theme-2/750337293927055452.png"><h2/>
+<img src="https://discord.c99.nl/widget/theme-2/750337293927055452.png"></h2>
