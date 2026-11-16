@@ -1,6 +1,6 @@
 {
   "name": "radio-harmony",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Radio for discord",
   "main": "./src/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mhmd-Akh/harmony-radio.git"
+    "url": "git+https://github.com/Mhmd-Akh/radio-harmony.git"
   },
   "keywords": [
     "radio",
@@ -19,7 +19,7 @@
   "author": "✥ MhmD ιnvιѕ#1854",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Mhmd-Akh/harmony-radio/issues"
+    "url": "https://github.com/Mhmd-Akh/radio-harmony/issues"
   },
   "dependencies": {
     "discord.js": "^13.8.1",
@@ -35,5 +35,5 @@
     "@distube/ytdl": "^2.0.6",
     "spotify-info": "^1.0.3"
   },
-  "homepage": "https://github.com/Mhmd-Akh/harmony-radio#readme"
+  "homepage": "https://github.com/Mhmd-Akh/radio-harmony#readme"
 }
