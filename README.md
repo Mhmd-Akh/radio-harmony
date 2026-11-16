@@ -69,6 +69,8 @@ See the <a href="https://github.com/Mhmd-Akh/radio-harmony/blob/main/test.js">te
 # 🆙 Update
 
 
+> v1.0.7 : `Fix package metadata URLs (harmony-radio -> radio-harmony)`
+
 > v1.0.6 : `MusicLink fixes: single-string Links, playlist recursion, required options validation`
 
 > v1.0.5 : `Fix Spotify & youtube`
